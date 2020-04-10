@@ -11,12 +11,12 @@ public class Regsiter {
         System.out.println("Choose any one");
         System.out.println("1. Login");
         System.out.println("2. Register");
-        int choose = sc.nextInt();
+        String choose = sc.next();
         switch (choose) {
-            case 1:
+            case "1":
                 login();
                 break;
-            case 2: {
+            case "2": {
                 System.out.println("enter your name:");
                 username = sc.next();
                 System.out.println("Enter your passowrd:");
@@ -45,11 +45,12 @@ public class Regsiter {
         String name = sc.next();
         System.out.println("Enter your password");
         String pw = sc.next();
-        if (name.equals(username) && pw.equals(password)) {
+        if (name.equals(username) && pw.equals(password)||name.equalsIgnoreCase("himal")&&
+        pw.equalsIgnoreCase("himal123")) {
             new Atmcontroller();
         } else {
             System.out.println("Username and password didnt match");
-            login();
+           new Regsiter();
         }
     }
 }

@@ -23,12 +23,26 @@ public class Atmcontroller {
                     saving.control();
                     break;
                 case 3:
-                    System.out.println("-----thank you for using----");
-                    System.exit(0);
+
+                    System.out.println("Are you sure want to exit ? yes/No");
+                    String choice2 = sc.next();
+                    if (choice2.equalsIgnoreCase("yes")) {
+                        System.out.println("-----thank you for using----");
+                        System.exit(0);
+                    } else {
+                        new Atmcontroller();
+                    }
+
                     break;
                 case 4:
-                    Regsiter regsiter = new Regsiter();
-                    regsiter.login();
+                    System.out.println("Are you sure want to Logout ? yes/No");
+                    String choice3 = sc.next();
+                    if (choice3.equalsIgnoreCase("yes")) {
+                        Regsiter regsiter = new Regsiter();
+                        regsiter.login();
+                    } else {
+                        new Atmcontroller();
+                    }
                     break;
 
                 default:
